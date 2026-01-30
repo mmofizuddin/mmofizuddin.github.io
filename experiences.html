@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Mohammed Mofiz Uddin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #fdfcf9;
+            --secondary-bg: #f5f1e8;
+            --accent: #8b4513;
+            --accent-light: #d4a574;
+            --text-dark: #2c2416;
+            --text-mid: #5a4a38;
+            --text-light: #8b7d6b;
+            --border: #ddd4c3;
+            --shadow: rgba(44, 36, 22, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(253, 252, 249, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1.5rem 0;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--text-mid);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:not(.logo):hover {
+            color: var(--accent);
+        }
+
+        nav a:not(.logo)::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:not(.logo):hover::after {
+            width: 100%;
+        }
+
+        main {
+            margin-top: 100px;
+            padding: 3rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .profile-section {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px var(--shadow);
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .profile-image {
+            width: 100%;
+            aspect-ratio: 1;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            padding: 2rem;
+        }
+
+        .profile-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+            color: var(--text-dark);
+        }
+
+        .profile-info .subtitle {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-details {
+            margin: 1.5rem 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .profile-details p {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .profile-details p::before {
+            content: '•';
+            color: var(--accent-light);
+            font-weight: bold;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            color: var(--text-mid);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .experience-item {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 2px;
+            box-shadow: 0 2px 10px var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px var(--shadow);
+        }
+
+        .experience-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-meta {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-item li {
+            color: var(--text-mid);
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .experience-item li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: bold;
+        }
+
+        .experience-item strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 5rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            animation: fadeInUp 0.8s ease-out 0.7s both;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .profile-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .profile-card {
+                position: static;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .experience-item {
+                padding: 1.5rem;
+            }
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(212, 165, 116, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(139, 69, 19, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Mohammed Mofiz Uddin</a>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="experiences.html">Experience</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="profile-section">
+                <aside>
+                    <div class="profile-card">
+                        <div class="profile-image">
+                            <img src="profile-photo.jpg" alt="Mohammed Mofiz Uddin">
+                        </div>
+                        <div class="profile-info">
+                            <h2>Mohammed Mofiz Uddin</h2>
+                            <div class="subtitle">Robotics & Control Engineering</div>
+                            
+                            <div class="profile-details">
+                                <p>Dhaka, Bangladesh</p>
+                                <p>North South University</p>
+                            </div>
+
+                            <div class="social-links">
+                                <a href="mailto:mohammed.mofiz161@gmail.com" title="Email">✉</a>
+                                <a href="https://github.com/MamaMofiz" title="Github" target="_blank">⚡</a>
+                                <a href="https://www.linkedin.com/in/mofizuddin/" title="LinkedIn" target="_blank">in</a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <div class="content">
+                    <h1 class="section-title">Professional Experience</h1>
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title">Research Assistant, North South Intelligent Robotics (NIRO) Lab</h3>
+                            <p class="experience-meta">October 2024 – Present</p>
+                        </div>
+                        <ul>
+                            <li>Conducting research on autonomous quadrotor systems with emphasis on Coverage Path Planning (CPP) algorithms</li>
+                            <li>Developing optimal and efficient UAV path planning solutions for area coverage applications</li>
+                            <li>Implementing algorithms for air quality monitoring using autonomous aerial systems</li>
+                            <li>Testing and validating autonomous navigation strategies in simulation environments</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title">Research Assistant, Mahzabeen Lab</h3>
+                            <p class="experience-meta">June 2024 – Present</p>
+                        </div>
+                        <ul>
+                            <li>Developing a novel cuffless blood pressure monitoring system for elderly care</li>
+                            <li>Designing custom embedded hardware integrating pressure sensors and microcontrollers</li>
+                            <li>Implementing signal processing algorithms for physiological data analysis</li>
+                            <li>Training and optimizing machine learning models for blood pressure estimation</li>
+                            <li>Conducting validation studies to ensure system accuracy and reliability</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title">Intern, NSU Startups Next</h3>
+                            <p class="experience-meta">May 2024 – November 2024 | Dhaka, Bangladesh</p>
+                        </div>
+                        <ul>
+                            <li>Managed operations and marketing initiatives for university startup ecosystem</li>
+                            <li>Led ideation projects facilitating entrepreneurial thinking among students</li>
+                            <li>Executed multiple social media campaigns to promote startup culture and events</li>
+                            <li>Coordinated with various stakeholders to organize entrepreneurship workshops and networking sessions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Mohammed Mofiz Uddin</p>
+        </div>
+    </footer>
+</body>
+</html>
