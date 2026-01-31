@@ -226,7 +226,11 @@
             background: white;
         }
 
-        .social-links a:hover {
+        .social-links a:hover img {
+                filter: invert(100%) !important;
+            }
+
+            .social-links a:hover {
             background: var(--accent);
             border-color: var(--accent);
             color: white;
@@ -234,6 +238,7 @@
         }
 
         .social-links a img {
+            transition: filter 0.3s ease;
             width: 18px;
             height: 18px;
         }
@@ -396,9 +401,9 @@
                             </div>
 
                             <div class="social-links">
-                                <a href="mailto:mohammed.mofiz161@gmail.com" title="Email">✉</a>
-                                <a href="https://github.com/mmofizuddin" title="Github" target="_blank">
-                                    <img src="github-icon.png" alt="GitHub">
+                                <a href="/cdn-cgi/l/email-protection#35585a5d54585850511b585a535c4f040304755258545c591b565a58" title="Email">✉</a>
+                                <a href="https://github.com/MamaMofiz" title="Github" target="_blank">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg" alt="GitHub" style="width: 18px; height: 18px; filter: invert(0%);">
                                 </a>
                                 <a href="https://www.linkedin.com/in/mofizuddin/" title="LinkedIn" target="_blank">in</a>
                                 <a href="https://orcid.org/0009-0005-4674-9548" title="ORCID" target="_blank">
@@ -428,8 +433,4 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 Mohammed Mofiz Uddin</p>
-        </div>
-    </footer>
-</body>
-</html>
+            <p>© 2026 Mohammed Mofiz Uddin
