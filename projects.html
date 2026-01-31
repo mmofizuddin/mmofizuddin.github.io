@@ -226,7 +226,11 @@
             background: white;
         }
 
-        .social-links a:hover {
+        .social-links a:hover img {
+                filter: invert(100%) !important;
+            }
+
+            .social-links a:hover {
             background: var(--accent);
             border-color: var(--accent);
             color: white;
@@ -234,6 +238,7 @@
         }
 
         .social-links a img {
+            transition: filter 0.3s ease;
             width: 18px;
             height: 18px;
         }
@@ -472,9 +477,9 @@
                             </div>
 
                             <div class="social-links">
-                                <a href="mailto:mohammed.mofiz161@gmail.com" title="Email">✉</a>
-                                <a href="https://github.com/mmofizuddin" title="Github" target="_blank">
-                                    <img src="github-icon.png" alt="GitHub">
+                                <a href="/cdn-cgi/l/email-protection#cfa2a0a7aea2a2aaabe1a2a0a9a6b5fef9fe8fa8a2aea6a3e1aca0a2" title="Email">✉</a>
+                                <a href="https://github.com/MamaMofiz" title="Github" target="_blank">
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg" alt="GitHub" style="width: 18px; height: 18px; filter: invert(0%);">
                                 </a>
                                 <a href="https://www.linkedin.com/in/mofizuddin/" title="LinkedIn" target="_blank">in</a>
                                 <a href="https://orcid.org/0009-0005-4674-9548" title="ORCID" target="_blank">
@@ -537,11 +542,11 @@
                         </div>
                         <div class="project-overview">
                             <p><strong>Undergraduate Thesis Research (Manuscript in process for publishing)</strong></p>
-                            <p>Co-developed SignSpeak, a camera-free wearable smart glove recognizing American Sign Language (ASL) and Bangladeshi Sign Language (BdSL) into text and speech in real-time using a CNN-LSTM architecture.</p>
+                            <p>Co-developed SignSpeak: A Camera-Free Wearable System for Real-Time Sign Language Recognition using a CNN-LSTM Architecture.</p>
                             <ul>
                                 <li>Designed a custom hardware stack integrating pressure sensors, IMUs, microcontrollers, eliminating the need for a camera</li>
                                 <li>Collaborated on hardware and software integration using smart sensors and AI to deliver real-time, camera-free gesture recognition</li>
-                                <li>Implemented deep learning models for accurate gesture-to-speech recognition</li>
+                                <li>Implemented deep learning models for accurate gesture-to-speech translation</li>
                                 <li>Developed real-time signal processing pipeline for sensor data analysis</li>
                                 <li>Created user interface for seamless interaction and translation display</li>
                             </ul>
@@ -600,8 +605,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 Mohammed Mofiz Uddin</p>
-        </div>
+            <p>© 2026 Mohammed Mofiz Uddin
     </footer>
 </body>
 </html>
